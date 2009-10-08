@@ -1,4 +1,6 @@
 Usage:
+  sudo gem install gemcutter
+  sudo gem tumble
   sudo gem install compass-baseline
 
 In Compass config:
