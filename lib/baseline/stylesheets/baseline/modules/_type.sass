@@ -49,6 +49,9 @@
     font-size: 13px
     top: 5px
 
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child
+    margin-top: 0
+
   p, pre, address
     font-size: 13px
     line-height: 18px
@@ -72,6 +75,12 @@
       margin-top: 0
       margin-bottom: 0
 
+  ul ul, ol ol
+    top: 0
+    margin-top: 0
+    margin-bottom: 0
+
+  li
     h1, h2, h3, h4, h5, h6, p
       top: 0
 
@@ -86,25 +95,13 @@
   input, textarea
     font-size: 12px
 
-  h1:first-child, h2:first-child, h3:first-child, h4:first-child
-    margin-top: 0
-
   table
     font-size: 13px
+
+  caption
+    font-size: 13px
     line-height: 18px
-    margin: 18px 0
-
-  th, td
-    padding: 3px 12px
-    line-height: 30px
-
-  th
-    background: rgba(0, 0, 0, 0.2)
-
-  tr
-    &:nth-child(even)
-      background: rgba(0, 0, 0, 0.1)
-    //&:nth-child(odd)
+    position: relative
 
   hr
     position: relative

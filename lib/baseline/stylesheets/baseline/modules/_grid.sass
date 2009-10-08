@@ -49,21 +49,10 @@
 
 =width(!n)
   width= 234px * !n + (18px * (!n - 1))
-  label&
-    float: left
-    input, textarea, .radio-text
-      width= 228px * !n + (24px * (!n - 1))
-    select
-      width: 100%
+  
   
 =unitx(!n)
   width= 108px * !n + (18px * (!n - 1))
-  label&
-    float: left
-    input, textarea
-      width= 102px * !n + (24px * (!n - 1))
-    select
-      width: 100%
       
 =columnsx(!n) 
   -webkit-column-count= !n
@@ -97,9 +86,21 @@
   @for !n from 1 to 4
     .width#{!n}
       +width(!n)
+  .table-column
+    th, td
+      +width(1)
+    @for !n from 2 to 4
+      th.width#{!n}, td.width#{!n}
+        +width(!n)
   @for !n from 1 to 8
-    .unitx1#{!n}
+    .unitx#{!n}
       +unitx(!n)
+  .table-unit
+    th, td
+      +unitx(1)
+    @for !n from 2 to 8
+      th.unitx#{!n}, td.unitx#{!n}
+        +unitx(!n)
   .columnsx2
     +columnsx(2)
   .columnsx4

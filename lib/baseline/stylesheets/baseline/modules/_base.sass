@@ -1,4 +1,5 @@
 =baseline-base(!body_selector = "body")
+  //******************** Base ********************
   #{!body_selector}
     +baseline-base-body
     @if !body_selector != "body"
@@ -7,19 +8,19 @@
     +baseline-base-defaults
 
 =baseline-base-body
-  font-family: helvetica, arial, sans-serif
-  line-height: 1.5
-  background: white
-  color: black
+    font-family: helvetica, arial, sans-serif
+    line-height: 1.5
+    background: white
+    color: black
 
 =baseline-base-defaults
   h1, h2, h3, h4, h5, h6
     line-height: 1.2
 
-  h4, h5, h6, b, strong, th, thead, dt, legend
+  h4, h5, h6, b, strong, caption, th, thead, dt, legend
     font-weight: bold
 
-  caption, cite, dfn, em, i
+  cite, dfn, em, i
     font-style: italic
 
   code, kbd, samp, pre, tt, var
@@ -100,17 +101,16 @@
     font: inherit
     width: 100%
 
-  th
-    background: rgba(0, 0, 0, 0.2)
-
-  tr
-    &:nth-child(even)
-      background: rgba(0, 0, 0, 0.1)
-    //&:nth-child(odd)
-
+  // html 5
   article, aside, header, hgroup, nav, section, footer
     float: left
     display: block
 
   figure
     display: block
+
+  .debug
+    outline: solid gold 1px
+
+  .debug-background
+    background: rgba(255, 215, 0, 0.2) !important

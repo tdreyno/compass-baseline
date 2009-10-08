@@ -41,7 +41,7 @@
   form
     overflow: auto
 
-  fieldset, legend
+  legend
     padding-bottom: 18px
 
   label
@@ -49,6 +49,13 @@
     margin: 0 0 11px 18px
     float: left
     display: block
+    &.first
+      margin-left: 0
+    &.singleline
+      +singleline
+    @for !n from 2 to 6
+      &.multilinex#{!n}
+        +multilinex(!n)
 
   input
     &[type="text"], &[type="password"], &[type="select"], &[type="search"]
@@ -69,18 +76,32 @@
   select
     display: block
     margin-top: 2px
+    margin-bottom: 0
 
   input
     &[type="submit"], &[type="reset"], &[type="button"]
       margin-left: 12px
-
-  label
-    &.singleline
-      +singleline
-    @for !n from 2 to 6
-      &.multilinex#{!n}
-        +multilinex(!n)
-
+      height: 18px
+      margin-bottom: 0
+      
+  @for !n from 1 to 4
+    .width#{!n} .radio-text
+      width= 228px * !n + (24px * (!n - 1))
+    label.width#{!n}
+      float: left
+      input, textarea
+        width= 102px * !n + (24px * (!n - 1))
+      select
+        width: 100%
+        
+  @for !n from 1 to 8
+    label.unitx#{!n}
+      float: left
+      input, textarea, .radio-text
+        width= 228px * !n + (24px * (!n - 1))
+      select
+        width: 100%
+      
   .radio
     +radio
 
