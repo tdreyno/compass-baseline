@@ -11,7 +11,7 @@ begin
     gem.authors = ["Thomas Reynolds"]
     gem.rubyforge_project = "compassbaseline"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-    gem.add_dependency("chriseppstein-compass")
+    gem.add_dependency("compass")
   end
 
   Jeweler::RubyforgeTasks.new
