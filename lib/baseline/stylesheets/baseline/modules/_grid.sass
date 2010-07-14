@@ -1,5 +1,5 @@
-=baseline-grid(!selector = "#page")
-  #{!selector}
+=baseline-grid($selector: unquote("#page"))
+  #{$selector}
     +baseline-grid-container
   +baseline-grid-defaults
 
@@ -47,19 +47,18 @@
 =noleading
   margin-bottom: 0 !important
 
-=width(!n)
-  width= 234px * !n + (18px * (!n - 1))
-  
-  
-=unitx(!n)
-  width= 108px * !n + (18px * (!n - 1))
-      
-=columnsx(!n) 
-  -webkit-column-count= !n
+=width($n)
+  width: 234px * $n + 18px * ($n - 1)
+
+=unitx($n)
+  width: 108px * $n + 18px * ($n - 1)
+
+=columnsx($n)
+  -webkit-column-count: $n
   -webkit-column-gap: 18px
-  -moz-column-count= !n
+  -moz-column-count: $n
   -moz-column-gap: 18px
-  column-count= !n
+  column-count: $n
   column-gap: 18px
 
 =baseline-grid-defaults
@@ -83,24 +82,24 @@
     +leading
   .noleading
     +noleading
-  @for !n from 1 to 4
-    .width#{!n}
-      +width(!n)
+  @for $n from 1 to 4
+    .width#{$n}
+      +width($n)
   .table-column
     th, td
       +width(1)
-    @for !n from 2 to 4
-      th.width#{!n}, td.width#{!n}
-        +width(!n)
-  @for !n from 1 to 8
-    .unitx#{!n}
-      +unitx(!n)
+    @for $n from 2 to 4
+      th.width#{$n}, td.width#{$n}
+        +width($n)
+  @for $n from 1 to 8
+    .unitx#{$n}
+      +unitx($n)
   .table-unit
     th, td
       +unitx(1)
-    @for !n from 2 to 8
-      th.unitx#{!n}, td.unitx#{!n}
-        +unitx(!n)
+    @for $n from 2 to 8
+      th.unitx#{$n}, td.unitx#{$n}
+        +unitx($n)
   .columnsx2
     +columnsx(2)
   .columnsx4
