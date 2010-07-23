@@ -9,12 +9,12 @@ begin
     gem.email = "tdreyno@gmail.com"
     gem.homepage = "http://github.com/tdreyno/compass-baseline"
     gem.authors = ["Thomas Reynolds"]
-    gem.rubyforge_project = "compassbaseline"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency("haml", ">=3.0")
     gem.add_dependency("compass")
   end
 
-  Jeweler::RubyforgeTasks.new
+  Jeweler::GemcutterTasks.new
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
